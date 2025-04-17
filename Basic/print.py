@@ -11,4 +11,8 @@ message = tk.Label(root, text="Hello World!")
 message.pack() 
 
 # Method of the main window object. it's like running window infinitely.
-root.mainloop()
+try:
+    from ctypes import windll
+    windll.shcore.SetProcessDpiAwarness(1)
+finally:
+    root.mainloop()
